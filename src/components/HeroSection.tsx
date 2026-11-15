@@ -1,5 +1,6 @@
 import { ArrowRight, MapPin } from 'lucide-react';
 import {
+  ABOUT_WHATSAPP_EXTERIOR_PHOTO,
   GOLDEN_HOUR_EXTERIOR_PHOTO,
   ORIGINAL_EXTERIOR_PHOTO,
 } from '../data/restaurantData';
@@ -13,21 +14,27 @@ export function HeroSection({ location }: HeroSectionProps) {
   return (
     <section
       id="home"
-      className="relative min-h-[92vh] lg:min-h-screen w-full flex items-end pb-16 sm:pb-24 pt-28 overflow-hidden bg-[#25201D]"
+      className="relative min-h-[94vh] md:min-h-[92vh] lg:min-h-screen w-full flex items-end pb-10 sm:pb-24 pt-28 overflow-hidden bg-[#25201D]"
     >
-      {/* Full-bleed authentic exterior background preserving signboard red/gold lettering and golden-hour light */}
+      {/* Full-bleed authentic exterior background: portrait restaurant signboard photo on mobile, golden-hour landscape photo on laptop/desktop */}
       <div className="absolute inset-0">
-        <ResilientImage
-          src={GOLDEN_HOUR_EXTERIOR_PHOTO}
-          fallbackSrc={ORIGINAL_EXTERIOR_PHOTO}
-          alt="Gujrat Grill & Marriage Halls building exterior and manicured front garden at golden hour in Gujrat, Pakistan"
-          loading="eager"
-          className="w-full h-full object-cover object-center scale-[1.01]"
-        />
+        <picture className="block w-full md:h-full">
+          <source
+            media="(max-width: 767px)"
+            srcSet={ABOUT_WHATSAPP_EXTERIOR_PHOTO}
+          />
+          <ResilientImage
+            src={GOLDEN_HOUR_EXTERIOR_PHOTO}
+            fallbackSrc={ORIGINAL_EXTERIOR_PHOTO}
+            alt="Gujrat Grill & Marriage Halls building exterior and manicured front garden in Gujrat, Pakistan"
+            loading="eager"
+            className="w-full h-auto md:h-full object-cover object-top md:object-center md:scale-[1.01]"
+          />
+        </picture>
         {/* Subtle bottom-weighted charcoal overlay keeping signboard crisp while ensuring legible text */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-[#25201D]/92 via-[#25201D]/28 to-transparent"
+          className="absolute inset-0 bg-gradient-to-t from-[#25201D] via-[#25201D]/65 md:via-[#25201D]/28 to-transparent"
         />
         <div
           aria-hidden="true"
@@ -43,7 +50,7 @@ export function HeroSection({ location }: HeroSectionProps) {
       <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           {/* Unboxed Location Indicator (Zero-Pill Rule) */}
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs sm:text-sm text-[#C6A052] font-medium tracking-wide mb-5">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs sm:text-sm text-[#C6A052] font-medium tracking-wide mb-3 sm:mb-5">
             <span className="inline-flex items-center gap-2 whitespace-nowrap">
               <MapPin className="w-4 h-4 shrink-0" aria-hidden="true" />
               <span>{location}</span>
@@ -55,16 +62,16 @@ export function HeroSection({ location }: HeroSectionProps) {
           </div>
 
           <h1
-            className="font-editorial text-[#FAF7F0] font-semibold leading-[1.06] tracking-tight mb-5"
+            className="font-editorial text-[#FAF7F0] font-semibold leading-[1.06] tracking-tight mb-4 sm:mb-5"
             style={{
-              fontSize: 'clamp(2.5rem, 4.8vw, 4.25rem)',
+              fontSize: 'clamp(2.25rem, 4.8vw, 4.25rem)',
               textWrap: 'balance',
             }}
           >
             Experience the Taste of Excellence
           </h1>
 
-          <p className="text-base sm:text-lg text-[#F3EBDD]/90 leading-relaxed max-w-xl mb-8">
+          <p className="text-sm sm:text-lg text-[#F3EBDD]/90 leading-relaxed max-w-xl mb-6 sm:mb-8">
             Discover delicious food, warm hospitality and a beautiful dining
             experience at Gujrat Grill.
           </p>
