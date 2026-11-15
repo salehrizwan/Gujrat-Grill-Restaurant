@@ -48,7 +48,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0B0B0B] text-[#F5F1E8]">
+    <div className="min-h-screen bg-[#FAF7F0] text-[#25201D]">
       <Navbar
         businessName={config.businessInfo.name}
         phoneHref={config.businessInfo.phoneHref}

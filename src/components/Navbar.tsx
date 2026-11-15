@@ -50,18 +50,18 @@ export function Navbar({
     <header
       className={`fixed top-0 inset-x-0 z-40 transition-colors duration-300 ${
         scrolled || mobileOpen
-          ? 'bg-[#0B0B0B]/95 backdrop-blur-md border-b border-[#D6A43B]/20'
-          : 'bg-gradient-to-b from-[#0B0B0B]/85 via-[#0B0B0B]/45 to-transparent border-b border-transparent'
+          ? 'bg-[#25201D] shadow-sm border-b border-[#C6A052]/30'
+          : 'bg-[#25201D]/90 backdrop-blur-md border-b border-[#C6A052]/20'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between gap-4 lg:gap-8">
         {/* Zone 1: Single-line original restaurant branding */}
         <a
           href="#home"
-          className="flex items-center gap-2 sm:gap-2.5 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D6A43B] rounded-sm"
+          className="flex items-center gap-2 sm:gap-2.5 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A052] rounded-sm"
         >
           <BrandMark className="w-5 h-6 sm:w-6 sm:h-7 shrink-0" />
-          <span className="font-editorial text-sm sm:text-lg xl:text-xl font-semibold tracking-[0.05em] sm:tracking-[0.06em] text-[#D6A43B] whitespace-nowrap">
+          <span className="font-editorial text-sm sm:text-lg xl:text-xl font-semibold tracking-[0.05em] sm:tracking-[0.06em] text-[#C6A052] whitespace-nowrap">
             {businessName}
           </span>
         </a>
@@ -69,13 +69,13 @@ export function Navbar({
         {/* Zone 2: Clean single-line navigation links */}
         <nav
           aria-label="Primary Navigation"
-          className="hidden lg:flex items-center gap-6 xl:gap-7 text-sm font-medium text-[#F5F1E8]/85"
+          className="hidden lg:flex items-center gap-6 xl:gap-7 text-sm font-medium text-[#F3EBDD]/90"
         >
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="relative py-1 whitespace-nowrap shrink-0 hover:text-[#D6A43B] transition-colors duration-200 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[1px] after:bg-[#D6A43B] hover:after:w-full after:transition-all after:duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D6A43B] rounded-sm"
+              className="relative py-1 whitespace-nowrap shrink-0 hover:text-[#C6A052] transition-colors duration-200 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[1px] after:bg-[#C6A052] hover:after:w-full after:transition-all after:duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A052] rounded-sm"
             >
               {link.label}
             </a>
@@ -87,16 +87,16 @@ export function Navbar({
           <a
             href={phoneHref}
             aria-label={`Call Now at ${phoneDisplay}`}
-            className="inline-flex items-center gap-2 text-sm font-medium text-[#F5F1E8]/90 hover:text-[#D6A43B] transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D6A43B] rounded-sm"
+            className="inline-flex items-center gap-2 text-sm font-medium text-[#F3EBDD] hover:text-[#C6A052] transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A052] rounded-sm"
           >
-            <Phone className="w-3.5 h-3.5 text-[#D6A43B]" aria-hidden="true" />
+            <Phone className="w-3.5 h-3.5 text-[#C6A052]" aria-hidden="true" />
             <span>Call Now</span>
           </a>
 
           <button
             type="button"
             onClick={onBookTable}
-            className="px-5 py-2.5 text-sm font-semibold text-[#0B0B0B] bg-[#D6A43B] hover:bg-[#e2b554] active:scale-[0.98] transition-all duration-200 rounded-sm whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5F1E8]"
+            className="px-5 py-2.5 text-sm font-semibold text-[#25201D] bg-[#C6A052] hover:bg-[#d3b066] active:scale-[0.98] transition-all duration-200 rounded-sm whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FAF7F0]"
           >
             Book a Table
           </button>
@@ -110,7 +110,7 @@ export function Navbar({
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav-drawer"
             aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
-            className="w-11 h-11 inline-flex items-center justify-center text-[#F5F1E8] hover:text-[#D6A43B] border border-[#F5F1E8]/15 rounded-sm transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D6A43B]"
+            className="w-11 h-11 inline-flex items-center justify-center text-[#F3EBDD] hover:text-[#C6A052] border border-[#C6A052]/30 rounded-sm transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C6A052]"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -122,7 +122,7 @@ export function Navbar({
         <nav
           id="mobile-nav-drawer"
           aria-label="Mobile Navigation"
-          className="lg:hidden bg-[#0B0B0B] border-t border-[#F5F1E8]/10 px-6 py-6 space-y-5"
+          className="lg:hidden bg-[#25201D] border-t border-[#C6A052]/20 px-6 py-6 space-y-5"
         >
           <div className="flex flex-col space-y-1">
             {NAV_LINKS.map((link) => (
@@ -130,7 +130,7 @@ export function Navbar({
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="py-3 text-base font-medium text-[#F5F1E8]/90 hover:text-[#D6A43B] border-b border-[#F5F1E8]/10 transition-colors"
+                className="py-3 text-base font-medium text-[#F3EBDD]/90 hover:text-[#C6A052] border-b border-[#F3EBDD]/10 transition-colors"
               >
                 {link.label}
               </a>
@@ -141,9 +141,9 @@ export function Navbar({
             <a
               href={phoneHref}
               onClick={() => setMobileOpen(false)}
-              className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-[#F5F1E8] border border-[#D6A43B]/40 hover:border-[#D6A43B] rounded-sm transition-colors"
+              className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-[#F3EBDD] border border-[#C6A052]/50 hover:border-[#C6A052] rounded-sm transition-colors"
             >
-              <Phone className="w-4 h-4 text-[#D6A43B]" aria-hidden="true" />
+              <Phone className="w-4 h-4 text-[#C6A052]" aria-hidden="true" />
               <span>Call Now · {phoneDisplay}</span>
             </a>
 
@@ -153,7 +153,7 @@ export function Navbar({
                 setMobileOpen(false);
                 onBookTable();
               }}
-              className="flex-1 px-5 py-3 text-sm font-semibold text-[#0B0B0B] bg-[#D6A43B] hover:bg-[#e2b554] rounded-sm transition-colors cursor-pointer"
+              className="flex-1 px-5 py-3 text-sm font-semibold text-[#25201D] bg-[#C6A052] hover:bg-[#d3b066] rounded-sm transition-colors cursor-pointer"
             >
               Book a Table
             </button>

@@ -21,10 +21,10 @@ export function HighlightsStrip() {
   return (
     <section
       aria-label="Restaurant Highlights"
-      className="bg-[#151515] border-y border-[#D6A43B]/20"
+      className="bg-[#FAF7F0] border-y border-[#C6A052]/35"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y sm:divide-y-0 sm:divide-x divide-[#D6A43B]/15">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 divide-y sm:divide-y-0 sm:divide-x divide-[#C6A052]/30">
           {RESTAURANT_HIGHLIGHTS.map((item, idx) => {
             const Icon =
               HIGHLIGHT_ICONS[item.id as keyof typeof HIGHLIGHT_ICONS] ?? Sparkles;
@@ -36,15 +36,15 @@ export function HighlightsStrip() {
               >
                 <div className="flex items-center gap-3">
                   <Icon
-                    className="w-5 h-5 text-[#D6A43B] shrink-0 transition-transform duration-200 group-hover:scale-110"
+                    className="w-5 h-5 text-[#762B35] shrink-0 transition-transform duration-200 group-hover:scale-110"
                     strokeWidth={1.6}
                     aria-hidden="true"
                   />
-                  <h2 className="font-editorial text-xl font-semibold text-[#F5F1E8] leading-snug">
+                  <h2 className="font-editorial text-xl font-semibold text-[#25201D] leading-snug">
                     {item.title}
                   </h2>
                 </div>
-                <p className="text-xs sm:text-sm text-[#F5F1E8]/68 leading-relaxed pl-8">
+                <p className="text-xs sm:text-sm text-[#392D28]/80 leading-relaxed pl-8">
                   {item.subtitle}
                 </p>
               </Reveal>

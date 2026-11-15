@@ -44,22 +44,25 @@ export function SpecialDiningSection({
   onBookOutdoor,
 }: SpecialDiningSectionProps) {
   return (
-    <section className="py-20 sm:py-28 bg-[#0B0B0B]">
+    <section className="py-20 sm:py-28 bg-[#762B35] text-[#F3EBDD]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
           {/* Left Editorial Column */}
           <Reveal className="lg:col-span-6 flex flex-col justify-between">
             <div>
-              <p className="text-sm font-medium text-[#D6A43B] tracking-wide mb-3">
-                Dining &amp; Celebrations
-              </p>
+              <div className="flex items-center gap-3 mb-3">
+                <span className="h-[1px] w-7 bg-[#C6A052]" aria-hidden="true" />
+                <p className="text-sm font-medium text-[#C6A052] tracking-wide">
+                  Dining &amp; Celebrations
+                </p>
+              </div>
               <h2
-                className="font-editorial text-3xl sm:text-5xl font-semibold text-[#F5F1E8] leading-[1.1]"
+                className="font-editorial text-3xl sm:text-5xl font-semibold text-[#FAF7F0] leading-[1.1]"
                 style={{ textWrap: 'balance' }}
               >
                 Crafted for Gatherings, Evenings &amp; Celebrations
               </h2>
-              <p className="mt-4 text-base text-[#F5F1E8]/75 leading-relaxed">
+              <p className="mt-4 text-base text-[#F3EBDD]/88 leading-relaxed">
                 From quiet outdoor dinners to family celebrations and marriage
                 hall events, every visit is tailored around comfort, courtesy,
                 and memorable hospitality.
@@ -71,17 +74,17 @@ export function SpecialDiningSection({
                   return (
                     <div
                       key={pillar.title}
-                      className="p-5 bg-[#151515] border border-[#F5F1E8]/10 rounded-sm"
+                      className="p-5 bg-[#5E2129] border border-[#C6A052]/40 rounded-sm"
                     >
                       <Icon
-                        className="w-5 h-5 text-[#D6A43B] mb-3"
+                        className="w-5 h-5 text-[#C6A052] mb-3"
                         strokeWidth={1.6}
                         aria-hidden="true"
                       />
-                      <h3 className="font-editorial text-xl font-semibold text-[#F5F1E8]">
+                      <h3 className="font-editorial text-xl font-semibold text-[#FAF7F0]">
                         {pillar.title}
                       </h3>
-                      <p className="mt-1.5 text-sm text-[#F5F1E8]/70 leading-relaxed">
+                      <p className="mt-1.5 text-sm text-[#F3EBDD]/82 leading-relaxed">
                         {pillar.detail}
                       </p>
                     </div>
@@ -94,7 +97,7 @@ export function SpecialDiningSection({
               <button
                 type="button"
                 onClick={onInquireEvents}
-                className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-[#0B0B0B] bg-[#D6A43B] hover:bg-[#e2b554] rounded-sm transition-colors cursor-pointer whitespace-nowrap"
+                className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-semibold text-[#25201D] bg-[#C6A052] hover:bg-[#d3b066] rounded-sm transition-colors cursor-pointer whitespace-nowrap"
               >
                 <span>Inquire for Marriage Halls &amp; Events</span>
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -103,7 +106,7 @@ export function SpecialDiningSection({
               <button
                 type="button"
                 onClick={onBookOutdoor}
-                className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-medium text-[#F5F1E8] border border-[#F5F1E8]/25 hover:border-[#D6A43B] rounded-sm transition-colors cursor-pointer whitespace-nowrap"
+                className="inline-flex items-center gap-2 px-6 py-3.5 text-sm font-medium text-[#FAF7F0] border border-[#C6A052]/60 hover:bg-[#5E2129] hover:border-[#C6A052] rounded-sm transition-colors cursor-pointer whitespace-nowrap"
               >
                 <span>Reserve Outdoor Seating</span>
               </button>
@@ -115,7 +118,7 @@ export function SpecialDiningSection({
             delayMs={80}
             className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-5"
           >
-            <div className="relative min-h-[240px] rounded-sm overflow-hidden border border-[#F5F1E8]/12 bg-[#151515]">
+            <div className="relative min-h-[240px] rounded-sm overflow-hidden border border-[#C6A052]/45 bg-[#25201D]">
               <ResilientImage
                 src={GOLDEN_HOUR_EXTERIOR_PHOTO}
                 fallbackSrc={ORIGINAL_EXTERIOR_PHOTO}
@@ -124,14 +127,14 @@ export function SpecialDiningSection({
               />
               <div
                 aria-hidden="true"
-                className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B]/85 via-transparent to-transparent"
+                className="absolute inset-0 bg-gradient-to-t from-[#25201D]/88 via-transparent to-transparent"
               />
-              <p className="absolute bottom-4 left-5 right-5 text-xs text-[#F5F1E8]/85">
+              <p className="absolute bottom-4 left-5 right-5 text-xs text-[#FAF7F0]/90">
                 Outdoor Lawn &amp; Garden Walkways — Gujrat Grill
               </p>
             </div>
 
-            <div className="relative min-h-[240px] rounded-sm overflow-hidden border border-[#F5F1E8]/12 bg-[#151515]">
+            <div className="relative min-h-[240px] rounded-sm overflow-hidden border border-[#C6A052]/45 bg-[#25201D]">
               <ResilientImage
                 src={AMBIENCE_FALLBACK_IMAGE}
                 alt="Sample evening family table setting — illustrative ambience placeholder"
@@ -139,9 +142,9 @@ export function SpecialDiningSection({
               />
               <div
                 aria-hidden="true"
-                className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B]/85 via-transparent to-transparent"
+                className="absolute inset-0 bg-gradient-to-t from-[#25201D]/88 via-transparent to-transparent"
               />
-              <p className="absolute bottom-4 left-5 right-5 text-xs text-[#F5F1E8]/85">
+              <p className="absolute bottom-4 left-5 right-5 text-xs text-[#FAF7F0]/90">
                 Family Dining &amp; Hospitality — Illustrative Table Setting Preview
               </p>
             </div>

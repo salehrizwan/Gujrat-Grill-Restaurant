@@ -40,21 +40,24 @@ export function MenuSection({
   );
 
   return (
-    <section id="menu" className="py-20 sm:py-28 bg-[#0B0B0B]">
+    <section id="menu" className="py-20 sm:py-28 bg-[#F3EBDD]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-10 border-b border-[#F5F1E8]/10">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-10 border-b border-[#C6A052]/35">
           <div className="max-w-2xl">
-            <p className="text-sm font-medium text-[#D6A43B] tracking-wide mb-3">
-              Culinary Highlights
-            </p>
+            <div className="flex items-center gap-3 mb-3">
+              <span className="h-[1px] w-7 bg-[#C6A052]" aria-hidden="true" />
+              <p className="text-sm font-semibold text-[#762B35] tracking-wide">
+                Culinary Highlights
+              </p>
+            </div>
             <h2
-              className="font-editorial text-3xl sm:text-5xl font-semibold text-[#F5F1E8] leading-tight"
+              className="font-editorial text-3xl sm:text-5xl font-semibold text-[#25201D] leading-tight"
               style={{ textWrap: 'balance' }}
             >
               Popular Menu Selections
             </h2>
-            <p className="mt-3 text-base text-[#F5F1E8]/75 leading-relaxed">
+            <p className="mt-3 text-base text-[#392D28]/85 leading-relaxed">
               Signature house favorites and guest-loved dishes prepared fresh to
               order. Dish details, pricing, and daily additions can be updated
               anytime by restaurant management.
@@ -65,9 +68,9 @@ export function MenuSection({
             <button
               type="button"
               onClick={onOpenOwnerEditor}
-              className="inline-flex items-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-medium text-[#F5F1E8]/85 border border-[#F5F1E8]/20 hover:border-[#D6A43B] hover:text-[#D6A43B] rounded-sm transition-colors cursor-pointer whitespace-nowrap"
+              className="inline-flex items-center gap-2 px-4 py-2.5 text-xs sm:text-sm font-medium text-[#25201D] bg-[#FAF7F0] border border-[#C6A052]/55 hover:border-[#762B35] hover:text-[#762B35] rounded-sm transition-colors cursor-pointer whitespace-nowrap"
             >
-              <PencilLine className="w-4 h-4" aria-hidden="true" />
+              <PencilLine className="w-4 h-4 text-[#762B35]" aria-hidden="true" />
               <span>Edit Menu Details</span>
             </button>
           </div>
@@ -78,7 +81,7 @@ export function MenuSection({
           <div
             role="tablist"
             aria-label="Filter menu by category"
-            className="flex flex-wrap items-center gap-1.5 p-1 bg-[#151515] border border-[#F5F1E8]/10 rounded-sm w-fit"
+            className="flex flex-wrap items-center gap-1.5 p-1 bg-[#FAF7F0] border border-[#C6A052]/40 rounded-sm w-fit"
           >
             {CATEGORIES.map((category) => {
               const isActive = selectedCategory === category;
@@ -89,10 +92,10 @@ export function MenuSection({
                   type="button"
                   aria-selected={isActive}
                   onClick={() => setSelectedCategory(category)}
-                  className={`px-3.5 py-2 text-xs sm:text-sm font-medium rounded-sm transition-colors whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D6A43B] ${
+                  className={`px-3.5 py-2 text-xs sm:text-sm font-medium rounded-sm transition-colors whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#762B35] ${
                     isActive
-                      ? 'bg-[#D6A43B] text-[#0B0B0B] font-semibold'
-                      : 'text-[#F5F1E8]/75 hover:text-[#F5F1E8]'
+                      ? 'bg-[#762B35] text-[#FAF7F0] font-semibold'
+                      : 'text-[#392D28] hover:text-[#762B35]'
                   }`}
                 >
                   {category}
@@ -107,7 +110,7 @@ export function MenuSection({
                 Search dishes
               </label>
               <Search
-                className="w-4 h-4 text-[#F5F1E8]/50 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
+                className="w-4 h-4 text-[#392D28]/60 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
                 aria-hidden="true"
               />
               <input
@@ -116,7 +119,7 @@ export function MenuSection({
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search menu items..."
-                className="w-full pl-10 pr-4 py-2.5 text-sm bg-[#151515] text-[#F5F1E8] placeholder:text-[#F5F1E8]/45 border border-[#F5F1E8]/15 focus:border-[#D6A43B] focus:outline-none rounded-sm"
+                className="w-full pl-10 pr-4 py-2.5 text-sm bg-[#FAF7F0] text-[#25201D] placeholder:text-[#392D28]/50 border border-[#C6A052]/45 focus:border-[#762B35] focus:outline-none rounded-sm"
               />
             </div>
           )}
@@ -124,8 +127,8 @@ export function MenuSection({
 
         {/* Dish Grid */}
         {filteredItems.length === 0 ? (
-          <div className="py-16 px-6 text-center bg-[#151515] border border-[#F5F1E8]/10 rounded-sm">
-            <p className="font-editorial text-2xl text-[#F5F1E8]">
+          <div className="py-16 px-6 text-center bg-[#FAF7F0] border border-[#C6A052]/35 rounded-sm">
+            <p className="font-editorial text-2xl text-[#25201D]">
               No dishes match your current filter.
             </p>
             <button
@@ -134,7 +137,7 @@ export function MenuSection({
                 setSelectedCategory('All');
                 setSearchQuery('');
               }}
-              className="mt-4 px-5 py-2.5 text-sm font-medium text-[#D6A43B] border border-[#D6A43B]/40 hover:border-[#D6A43B] rounded-sm transition-colors cursor-pointer"
+              className="mt-4 px-5 py-2.5 text-sm font-medium text-[#762B35] border border-[#762B35]/45 hover:bg-[#762B35] hover:text-[#FAF7F0] rounded-sm transition-colors cursor-pointer"
             >
               Show All Dishes
             </button>
@@ -160,9 +163,9 @@ export function MenuSection({
                   delayMs={index * 50}
                   className={`h-full ${spanClass}`}
                 >
-                  <article className="group h-full flex flex-col bg-[#151515] border border-[#F5F1E8]/10 hover:border-[#D6A43B]/45 transition-colors duration-300 rounded-sm overflow-hidden">
+                  <article className="group h-full flex flex-col bg-[#FAF7F0] border border-[#C6A052]/35 hover:border-[#762B35]/55 transition-all duration-300 rounded-sm overflow-hidden shadow-xs">
                     <div
-                      className={`relative overflow-hidden bg-[#0B0B0B] ${
+                      className={`relative overflow-hidden bg-[#25201D] ${
                         selectedCategory === 'All' &&
                         filteredItems.length === 5 &&
                         index < 2
@@ -170,68 +173,68 @@ export function MenuSection({
                           : 'aspect-[4/3]'
                       }`}
                     >
-                  <ResilientImage
-                    src={dish.image}
-                    fallbackSrc={dish.fallbackImage}
-                    alt={`${dish.name} — ${dish.category}`}
-                    className={`w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 ${
-                      dish.imagePosition ?? 'object-center'
-                    }`}
-                  />
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#151515] via-[#151515]/40 to-transparent"
-                  />
-                </div>
+                      <ResilientImage
+                        src={dish.image}
+                        fallbackSrc={dish.fallbackImage}
+                        alt={`${dish.name} — ${dish.category}`}
+                        className={`w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105 ${
+                          dish.imagePosition ?? 'object-center'
+                        }`}
+                      />
+                    </div>
 
-                <div className="p-6 flex flex-col flex-1 justify-between gap-4">
-                  <div>
-                    {/* Clean Unboxed Metadata Line */}
-                    <div className="flex items-center gap-2 text-xs text-[#D6A43B] font-medium mb-2">
-                      <span>{dish.category}</span>
-                      {dish.isSignatureHighlight && (
-                        <>
-                          <span aria-hidden="true">·</span>
-                          <span className="text-[#F5F1E8]/75">
-                            Featured Highlight
+                    <div className="p-6 flex flex-col flex-1 justify-between gap-4">
+                      <div>
+                        {/* Clean Unboxed Metadata Line */}
+                        <div className="flex items-center gap-2 text-xs text-[#762B35] font-semibold mb-2">
+                          <span>{dish.category}</span>
+                          {dish.isSignatureHighlight && (
+                            <>
+                              <span aria-hidden="true" className="text-[#C6A052]">
+                                ·
+                              </span>
+                              <span className="text-[#392D28]/75 font-medium">
+                                Featured Highlight
+                              </span>
+                            </>
+                          )}
+                        </div>
+
+                        <div className="flex items-baseline justify-between gap-4">
+                          <h3 className="font-editorial text-2xl sm:text-[1.7rem] font-semibold text-[#25201D] leading-snug">
+                            {dish.name}
+                          </h3>
+                          {dish.price && (
+                            <span className="text-sm font-semibold text-[#762B35] tabular-nums shrink-0">
+                              {dish.price}
+                            </span>
+                          )}
+                        </div>
+
+                        {dish.note && (
+                          <p className="mt-2.5 text-sm text-[#392D28]/80 leading-relaxed">
+                            {dish.note}
+                          </p>
+                        )}
+                      </div>
+
+                      {fullMenuExpanded && (
+                        <div className="pt-3 border-t border-[#C6A052]/25 flex items-center justify-between text-xs text-[#392D28]/75">
+                          <span>
+                            {dish.price
+                              ? 'Available for Dine-in & Takeaway'
+                              : 'Price available upon request'}
                           </span>
-                        </>
+                          <button
+                            type="button"
+                            onClick={onBookTable}
+                            className="text-[#762B35] hover:underline font-semibold cursor-pointer"
+                          >
+                            Reserve
+                          </button>
+                        </div>
                       )}
                     </div>
-
-                    <div className="flex items-baseline justify-between gap-4">
-                      <h3 className="font-editorial text-2xl sm:text-[1.7rem] font-semibold text-[#F5F1E8] leading-snug">
-                        {dish.name}
-                      </h3>
-                      {dish.price && (
-                        <span className="text-sm font-semibold text-[#D6A43B] tabular-nums shrink-0">
-                          {dish.price}
-                        </span>
-                      )}
-                    </div>
-
-                    {dish.note && (
-                      <p className="mt-2.5 text-sm text-[#F5F1E8]/72 leading-relaxed">
-                        {dish.note}
-                      </p>
-                    )}
-                  </div>
-
-                  {fullMenuExpanded && (
-                    <div className="pt-3 border-t border-[#F5F1E8]/10 flex items-center justify-between text-xs text-[#F5F1E8]/65">
-                      <span>
-                        {dish.price ? 'Available for Dine-in & Takeaway' : 'Price available upon request'}
-                      </span>
-                      <button
-                        type="button"
-                        onClick={onBookTable}
-                        className="text-[#D6A43B] hover:underline font-medium cursor-pointer"
-                      >
-                        Reserve
-                      </button>
-                    </div>
-                  )}
-                </div>
                   </article>
                 </Reveal>
               );
@@ -240,8 +243,8 @@ export function MenuSection({
         )}
 
         {/* View Full Menu Action Bar */}
-        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-[#F5F1E8]/10">
-          <p className="text-sm text-[#F5F1E8]/65">
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-[#C6A052]/35">
+          <p className="text-sm text-[#392D28]/75">
             Photography shown for dishes is illustrative culinary preview imagery
             and can be replaced with in-house photos anytime.
           </p>
@@ -249,10 +252,10 @@ export function MenuSection({
           <button
             type="button"
             onClick={() => setFullMenuExpanded((prev) => !prev)}
-            className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold text-[#0B0B0B] bg-[#D6A43B] hover:bg-[#e2b554] rounded-sm transition-colors cursor-pointer whitespace-nowrap shrink-0"
+            className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold text-[#FAF7F0] bg-[#762B35] hover:bg-[#5e2129] border border-[#C6A052]/50 rounded-sm transition-colors cursor-pointer whitespace-nowrap shrink-0"
           >
             <span>{fullMenuExpanded ? 'Show Highlight Grid' : 'View Full Menu'}</span>
-            <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
+            <ArrowUpRight className="w-4 h-4 text-[#C6A052]" aria-hidden="true" />
           </button>
         </div>
       </div>

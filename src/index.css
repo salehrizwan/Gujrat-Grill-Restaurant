@@ -3,24 +3,26 @@
 @theme {
   --font-serif: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", serif;
   --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --color-obsidian: #0B0B0B;
-  --color-charcoal: #151515;
-  --color-royal-gold: #D6A43B;
-  --color-warm-ivory: #F5F1E8;
+  --color-ivory: #F3EBDD;
+  --color-cream: #FAF7F0;
+  --color-charcoal: #25201D;
+  --color-dark-brown: #392D28;
+  --color-burgundy: #762B35;
+  --color-royal-gold: #C6A052;
 }
 
 @layer base {
   html {
-    background-color: #0B0B0B;
-    color: #F5F1E8;
+    background-color: #FAF7F0;
+    color: #25201D;
     font-family: var(--font-sans);
     scroll-behavior: smooth;
     overflow-x: hidden;
   }
 
   body {
-    background-color: #0B0B0B;
-    color: #F5F1E8;
+    background-color: #FAF7F0;
+    color: #25201D;
     overflow-x: hidden;
   }
 
