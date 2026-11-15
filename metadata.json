@@ -1,0 +1,6 @@
+{
+  "name": "Gujrat Grill & Marriage Halls",
+  "description": "Luxury dining, outdoor garden seating, and marriage halls showcase for Gujrat Grill & Marriage Halls in Gujrat, Pakistan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,92 @@
+import { ArrowRight, MapPin } from 'lucide-react';
+import {
+  GOLDEN_HOUR_EXTERIOR_PHOTO,
+  ORIGINAL_EXTERIOR_PHOTO,
+} from '../data/restaurantData';
+import { ResilientImage } from './ResilientImage';
+
+interface HeroSectionProps {
+  location: string;
+}
+
+export function HeroSection({ location }: HeroSectionProps) {
+  return (
+    <section
+      id="home"
+      className="relative min-h-[92vh] lg:min-h-screen w-full flex items-end pb-16 sm:pb-24 pt-28 overflow-hidden bg-[#0B0B0B]"
+    >
+      {/* Full-bleed authentic exterior background with golden-hour photographic treatment */}
+      <div className="absolute inset-0">
+        <ResilientImage
+          src={GOLDEN_HOUR_EXTERIOR_PHOTO}
+          fallbackSrc={ORIGINAL_EXTERIOR_PHOTO}
+          alt="Gujrat Grill & Marriage Halls building exterior and manicured front garden at golden hour in Gujrat, Pakistan"
+          loading="eager"
+          className="w-full h-full object-cover object-center scale-[1.01]"
+        />
+        {/* Measured scrim keeping full building signboard crisp while guaranteeing >= 4.5:1 text contrast */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-[#0B0B0B]/48 to-[#0B0B0B]/30"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{
+            background:
+              'radial-gradient(ellipse 68% 62% at 22% 82%, rgba(11, 11, 11, 0.86) 0%, rgba(11, 11, 11, 0.42) 60%, transparent 100%)',
+          }}
+        />
+      </div>
+
+      {/* Hero Foreground Content */}
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+        <div className="max-w-2xl">
+          {/* Unboxed Location Indicator (Zero-Pill Rule) */}
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs sm:text-sm text-[#D6A43B] font-medium tracking-wide mb-5">
+            <span className="inline-flex items-center gap-2 whitespace-nowrap">
+              <MapPin className="w-4 h-4 shrink-0" aria-hidden="true" />
+              <span>{location}</span>
+            </span>
+            <span className="hidden sm:inline-block h-[1px] w-8 bg-[#D6A43B]/60" aria-hidden="true" />
+            <span className="text-[#F5F1E8]/85 font-normal whitespace-nowrap">
+              Restaurant &amp; Marriage Halls
+            </span>
+          </div>
+
+          <h1
+            className="font-editorial text-[#F5F1E8] font-semibold leading-[1.06] tracking-tight mb-5"
+            style={{
+              fontSize: 'clamp(2.5rem, 4.8vw, 4.25rem)',
+              textWrap: 'balance',
+            }}
+          >
+            Experience the Taste of Excellence
+          </h1>
+
+          <p className="text-base sm:text-lg text-[#F5F1E8]/88 leading-relaxed max-w-xl mb-8">
+            Discover delicious food, warm hospitality and a beautiful dining
+            experience at Gujrat Grill.
+          </p>
+
+          <div className="flex flex-wrap items-center gap-4">
+            <a
+              href="#menu"
+              className="inline-flex items-center gap-2.5 px-7 py-3.5 text-sm font-semibold text-[#0B0B0B] bg-[#D6A43B] hover:bg-[#e2b554] active:scale-[0.98] transition-all duration-200 rounded-sm whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F5F1E8]"
+            >
+              <span>Explore Our Menu</span>
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
+            </a>
+
+            <a
+              href="#about"
+              className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium text-[#F5F1E8] border border-[#F5F1E8]/35 bg-[#0B0B0B]/45 hover:bg-[#151515]/80 hover:border-[#D6A43B]/70 transition-all duration-200 rounded-sm whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D6A43B]"
+            >
+              <span>Discover Our Restaurant</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
